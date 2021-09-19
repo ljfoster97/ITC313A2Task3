@@ -19,6 +19,7 @@ public class IncomeRange {
     }
     public IncomeRange() {
     }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -32,18 +33,23 @@ public class IncomeRange {
     }
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         IncomeRange other = (IncomeRange) obj;
-        if (Double.doubleToLongBits(lowerLimit) != Double.doubleToLongBits(other.lowerLimit))
+        if (Double.doubleToLongBits(lowerLimit) != Double.doubleToLongBits(other.lowerLimit)){
             return false;
-        if (Double.doubleToLongBits(upperLimit) != Double.doubleToLongBits(other.upperLimit))
-            return false;
-        return true;
+        }
+        else {
+            return Double.doubleToLongBits(upperLimit) == Double.doubleToLongBits(other.upperLimit);
+        }
+
     }
 
 }

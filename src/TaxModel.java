@@ -2,6 +2,7 @@ public class TaxModel {
     private double centsPerDollar;
     private double baseTax;
     private double overLimit;
+    private double perAmount;
 
     public double getCentsPerDollar() {
         return centsPerDollar;
@@ -27,10 +28,21 @@ public class TaxModel {
         this.overLimit = overLimit;
     }
 
-    public TaxModel(double centsPerDollar, double baseTax, double overLimit) {
+    public TaxModel(double centsPerDollar, double baseTax, double overLimit, double perAmount) {
         this.centsPerDollar = centsPerDollar;
         this.baseTax = baseTax;
         this.overLimit = overLimit;
+        this.perAmount = perAmount;
+    }
+
+    @Override
+    public String toString() {
+        return "TaxModel{" +
+                "centsPerDollar=" + centsPerDollar +
+                ", baseTax=" + baseTax +
+                ", overLimit=" + overLimit +
+                ", perAmount=" + perAmount +
+                '}';
     }
 
     public TaxModel() {
