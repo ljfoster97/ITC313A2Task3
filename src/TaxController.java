@@ -49,15 +49,15 @@ public class TaxController {
             // Skip the header on the first line.
             scanner.nextLine();
             while (scanner.hasNextLine()) {
-                String cleanLine = "";
+                StringBuilder cleanLine = new StringBuilder();
                 currentLine = scanner.nextLine();
                 currentLine = currentLine.replaceAll("[,]", "");
                 Pattern regex = Pattern.compile("(\\d+(?:\\.\\d+)?)");
                 Matcher matcher = regex.matcher(currentLine);
                 while (matcher.find()){
-                    cleanLine += matcher.group(1) + " ";
+                    cleanLine.append(matcher.group(1)).append(" ");
                 }
-                String[] stringArray = cleanLine.split(" ");
+                String[] stringArray = cleanLine.toString().split(" ");
                 double[] doubleArray = new double[stringArray.length];
                 for(int j = 0; j < stringArray.length; j++) {
                     try {
