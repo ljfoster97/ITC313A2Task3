@@ -27,7 +27,7 @@ public class Task3 extends Application {
         taxController.getTaxRates();
 
         stage.setTitle("Tax Calculation");
-
+ 
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
         gridPane.setHgap(10);
@@ -38,12 +38,14 @@ public class Task3 extends Application {
         gridPane.add(incomeLabel, 0, 0);
 
         TextField incomeField = new TextField();
+        incomeField.setAlignment(Pos.CENTER_RIGHT);
         gridPane.add(incomeField, 1, 0);
 
         Label taxLabel = new Label("Tax:");
         gridPane.add(taxLabel, 0, 1);
 
         TextField taxField = new TextField();
+        taxField.setAlignment(Pos.CENTER_RIGHT);
         taxField.setEditable(false);
         gridPane.add(taxField, 1, 1);
 
@@ -54,7 +56,7 @@ public class Task3 extends Application {
         buttonCalculate.setOnAction(actionEvent -> {
             String taxableIncome = incomeField.getText();
             if (TaxController.BLANK.equals(taxableIncome)) {
-                this.alert("Input Missing", "Please enter Taxable income!!", AlertType.ERROR);
+                this.alert("Input Missing", "Please enter a valid taxable income amount.", AlertType.ERROR);
             } else {
                 double calculatedTax = 0;
                 double taxableIncomeDbl = Double.parseDouble(taxableIncome);
